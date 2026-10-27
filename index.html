@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Catalog</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>Product Catalog</h1>
+            <p>Find the right product quickly.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Filters -->
+        <section class="filters">
+
+            <div class="search-box">
+                <label for="search">Search</label>
+
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="Search products..."
+                >
+            </div>
+
+            <div class="filter-group">
+                <label for="category">Category</label>
+
+                <select id="category">
+                    <option value="all">All Categories</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="min-price">Min Price</label>
+
+                <input
+                    type="number"
+                    id="min-price"
+                    placeholder="0"
+                    min="0"
+                >
+            </div>
+
+            <div class="filter-group">
+                <label for="max-price">Max Price</label>
+
+                <input
+                    type="number"
+                    id="max-price"
+                    placeholder="1000"
+                    min="0"
+                >
+            </div>
+
+            <div class="filter-group">
+                <label for="sort">Sort By</label>
+
+                <select id="sort">
+                    <option value="default">Default</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating-high">Rating: High to Low</option>
+                    <option value="rating-low">Rating: Low to High</option>
+                </select>
+            </div>
+
+            <button id="clear-btn" class="clear-btn">
+                Clear Filters
+            </button>
+
+        </section>
+
+        <!-- Result information -->
+        <div class="result-info">
+            <h2>Products</h2>
+            <span id="product-count">Loading...</span>
+        </div>
+
+        <!-- Loading -->
+        <div id="loading" class="loading">
+            Loading products...
+        </div>
+
+        <!-- Error -->
+        <div id="error" class="error hidden">
+            Unable to load products. Please try again.
+        </div>
+
+        <!-- Products -->
+        <section id="product-grid" class="product-grid"></section>
+
+        <!-- Empty State -->
+        <section id="empty-state" class="empty-state hidden">
+
+            <div class="empty-icon">🔍</div>
+
+            <h2>No products found</h2>
+
+            <p>
+                Try changing your search or filters.
+            </p>
+
+            <button id="empty-clear-btn">
+                Clear Filters
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
